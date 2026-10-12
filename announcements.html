@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Announcements – KCC Institute of Technology and Management</title>
+<link rel="stylesheet" href="styles.css?v=5">
+<style>
+.an-wrap{background:linear-gradient(180deg,#f4f6fb,#fff 40%);padding:44px 0 70px}
+.an-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 0 34px}
+.an-chip{border:1.5px solid #d5dae6;background:#fff;color:var(--navy);padding:8px 20px;border-radius:30px;font:600 14px Ruda,sans-serif;cursor:pointer;transition:all .2s;box-shadow:0 2px 6px rgba(20,33,61,.06)}
+.an-chip:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+.an-chip.on{background:linear-gradient(135deg,#e8323a,#ae161c);border-color:transparent;color:#fff;box-shadow:0 8px 18px rgba(174,22,28,.35)}
+.an-h{display:flex;align-items:center;gap:12px;margin:0 0 20px;font:700 22px Ruda,sans-serif;color:var(--navy)}
+.an-h::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,#e1c8ca,transparent)}
+.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:46px;perspective:1000px}
+.an-card{display:flex;gap:16px;padding:22px;border-radius:16px;background:#fff;border:1px solid #e6eaf3;border-left:5px solid var(--red);box-shadow:0 8px 22px rgba(20,33,61,.08);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.an-card::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(225,28,36,.1),transparent 70%)}
+.an-card:hover{transform:translateY(-6px) rotateX(2deg);box-shadow:0 18px 36px rgba(20,33,61,.16)}
+.an-ic{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:14px;font-size:26px;background:linear-gradient(145deg,#fff1f1,#ffd9dc);box-shadow:0 6px 14px rgba(174,22,28,.2)}
+.an-card h3{margin:6px 0 4px;font-size:17px;line-height:1.35;color:var(--navy)}
+.an-card small{color:#7a8396;font-size:12.5px}
+.an-card p{margin:8px 0 0;font-size:14px;line-height:1.55;color:#4d576b}
+.an-tag{display:inline-block;font:700 11px Ruda,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#fde0e1;color:#ae161c}
+.an-tag.event{background:#fff0cf;color:#9a6a05}
+.an-tag.visit{background:#dde8ff;color:#2a4aa8}
+.an-card[data-c=event]{border-left-color:#d9a441}.an-card[data-c=visit]{border-left-color:#3a5bd0}
+.an-tl{position:relative;padding-left:44px}
+.an-tl::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(180deg,#e11c24,#d9a441,#3a5bd0)}
+.an-item{position:relative;margin-bottom:18px;animation:anIn .6s both}
+.an-dot{position:absolute;left:-44px;top:8px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:3px solid var(--red);font-size:18px;box-shadow:0 6px 14px rgba(20,33,61,.15);transition:transform .25s}
+.an-item[data-c=event] .an-dot{border-color:#d9a441}.an-item[data-c=visit] .an-dot{border-color:#3a5bd0}
+.an-box{padding:16px 20px;border-radius:14px;background:#fff;border:1px solid #e6eaf3;box-shadow:0 4px 14px rgba(20,33,61,.07);transition:transform .25s,box-shadow .25s}
+.an-item:hover .an-box{transform:translateX(6px);box-shadow:0 12px 26px rgba(20,33,61,.14)}
+.an-item:hover .an-dot{transform:scale(1.15)}
+.an-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.an-meta time{font-size:12.5px;color:#7a8396;font-weight:600}
+.an-box h3{margin:0 0 4px;font-size:16.5px;line-height:1.4;color:var(--navy)}
+.an-box p{margin:0;font-size:13.5px;color:#5b6577}
+@keyframes anIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.an-hide{display:none!important}
+@media(max-width:800px){.an-grid{grid-template-columns:1fr}.an-tl{padding-left:38px}.an-dot{left:-38px;width:34px;height:34px;font-size:15px}.an-tl::before{left:16px}}
+@media(prefers-reduced-motion:reduce){.an-item{animation:none}}
+</style></head><body>
+<div id="site-header"></div>
+<div class="page-head"><h1>Site Announcements</h1><p>News, events and notices</p></div>
+<section class="an-wrap"><div class="container" style="max-width:1000px">
+<div class="an-chips"><button class="an-chip on" data-f="all">All</button><button class="an-chip" data-f="notice">📢 Notices</button><button class="an-chip" data-f="event">🎉 Events</button><button class="an-chip" data-f="visit">🏭 Visits</button></div>
+<h2 class="an-h" data-sec="imp">Important notices</h2>
+<div class="an-grid">
+<article class="an-card" data-c="notice"><span class="an-ic">📢</span><div><span class="an-tag notice">Notice</span><h3>Admissions open – last date 15 October 2026</h3><small>Admissions Office</small><p>Last date to apply for B.Tech, KCC ILHE, M.Tech and MBA Plus is 15th October 2026.</p></div></article>
+<article class="an-card" data-c="event"><span class="an-ic">🎉</span><div><span class="an-tag event">Event</span><h3>Anugoonj 2026 (GGSIPU inter-college fest)</h3><small>KCC Institutes</small><p>Day-wise schedules and results, rules and regulations, debate and collage topics and the prelims invitation are published on the official site.</p></div></article>
+<article class="an-card" data-c="notice"><span class="an-ic">📢</span><div><span class="an-tag notice">Notice</span><h3>Fee structure 2026-27 published</h3><small>Admissions Office</small><p>B.Tech ₹60,000 per semester, MBA Plus ₹65,000 per semester, KCC ILHE ₹95,000 per year.</p></div></article>
+<article class="an-card" data-c="notice"><span class="an-ic">📢</span><div><span class="an-tag notice">Notice</span><h3>Management quota notices 2025-26 and 2026-27</h3><small>Admissions Office</small><p>Seat matrix and applicant lists are available on the official site.</p></div></article>
+</div>
+<h2 class="an-h" data-sec="rec">Recent events</h2>
+<div class="an-tl">
+<article class="an-item" data-c="event"><span class="an-dot">🎉</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>25 November 2025</time></div><h3>AKTU Zonal Level Sports Fest 2025</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="visit"><span class="an-dot">🏭</span><div class="an-box"><div class="an-meta"><span class="an-tag visit">Visit</span><time>4 November 2025</time></div><h3>Industrial Visit to Haier Appliances India Pvt Ltd</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="event"><span class="an-dot">🎉</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>3 November 2025</time></div><h3>One evening, one vibe, one unforgettable night</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="event"><span class="an-dot">🎉</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>4 October 2025</time></div><h3>Cloud Burst 2025</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="event"><span class="an-dot">🎉</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>2 October 2025</time></div><h3>Inspiration 2025 – Turning Art into Action</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="event"><span class="an-dot">🎓</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>3 September 2025</time></div><h3>Exploring Career Paths</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="visit"><span class="an-dot">🏭</span><div class="an-box"><div class="an-meta"><span class="an-tag visit">Visit</span><time>2 September 2025</time></div><h3>Science Meets Wellness at the Yakult Factory Tour</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="event"><span class="an-dot">🎓</span><div class="an-box"><div class="an-meta"><span class="an-tag event">Event</span><time>22 August 2025</time></div><h3>Thought leaders gather at KCC Institutes to discuss Indian Knowledge Systems and India’s Vision for 2047</h3><p>Events at KCC Institutes.</p></div></article>
+<article class="an-item" data-c="visit"><span class="an-dot">🏭</span><div class="an-box"><div class="an-meta"><span class="an-tag visit">Visit</span><time>18 August 2025</time></div><h3>KCC Educational Visit to DMRA Delhi</h3><p>Events at KCC Institutes.</p></div></article>
+</div>
+</div></section>
+<div id="site-footer"></div>
+<script src="layout.js?v=3"></script><script src="script.js"></script>
+<script>(function(){
+var chips=document.querySelectorAll(".an-chip"),items=document.querySelectorAll(".an-card,.an-item");
+items.forEach(function(e,i){e.style.animationDelay=(i%8)*60+"ms"});
+chips.forEach(function(b){b.onclick=function(){chips.forEach(function(x){x.classList.remove("on")});b.classList.add("on");var f=b.dataset.f;
+items.forEach(function(e){e.classList.toggle("an-hide",f!=="all"&&e.dataset.c!==f)});
+document.querySelectorAll(".an-h").forEach(function(h){var box=h.nextElementSibling;h.classList.toggle("an-hide",!box.querySelector(":scope > :not(.an-hide)"))})}});
+})();</script>
+</body></html>

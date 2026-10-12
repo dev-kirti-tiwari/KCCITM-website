@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme preview – KCC Red + Midnight Navy</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Ruda:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap");
+:root{
+  --red:#b3242b;      /* from KCC logo */
+  --red-dark:#8e1b21;
+  --navy:#14213d;     /* Option 6 */
+  --navy-2:#1d2d52;
+  --gold:#c8962e;     /* small highlights only */
+  --bg:#f5f6f8;
+  --white:#fff;
+  --ink:#1b2230;
+  --muted:#5f6878;
+  --line:#e3e6ec;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3,.btn,nav a{font-family:Ruda,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{width:min(1140px,100% - 32px);margin-inline:auto}
+
+.palette{background:#fff;border-bottom:1px solid var(--line);padding:14px 0;font-size:13px}
+.palette .container{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sw{display:flex;align-items:center;gap:6px}
+.sw i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+
+.topbar{background:var(--navy);color:#cfd6e4;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar b{color:#fff;font-weight:600}
+
+.navbar{background:#fff;border-bottom:3px solid var(--red);position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav img{height:54px}
+nav{display:flex;gap:24px;font-size:14px;font-weight:600;color:var(--navy)}
+nav a:hover,nav a.on{color:var(--red)}
+.apply{background:var(--red);color:#fff;padding:10px 20px;border-radius:4px;font:700 14px Ruda}
+
+.hero{position:relative;background:linear-gradient(90deg,rgba(20,33,61,.94) 0%,rgba(20,33,61,.82) 48%,rgba(20,33,61,.35) 100%),url(images/cr-1.webp) center/cover;color:#fff}
+.hero .container{padding:84px 0 96px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.tag{display:inline-block;color:var(--gold);font:700 12px Ruda;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font:800 clamp(32px,4.6vw,52px)/1.1 Ruda}
+.hero h1 span{color:#fff;border-bottom:4px solid var(--red)}
+.hero p{margin:18px 0 26px;max-width:520px;color:#d6dcea}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:4px;font-weight:700;font-size:14px}
+.btn.red{background:var(--red);color:#fff}
+.btn.line{border:1.5px solid #fff;color:#fff}
+.hero-card{background:rgba(255,255,255,.96);color:var(--ink);border-radius:8px;padding:22px;border-top:4px solid var(--red)}
+.hero-card h3{color:var(--navy);margin-bottom:8px}
+.hero-card li{list-style:none;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between}
+.hero-card li:last-child{border:0}
+.hero-card b{color:var(--red)}
+
+.stats{background:var(--red);color:#fff}
+.stats .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));text-align:center}
+.stats div{padding:22px 10px;border-right:1px solid rgba(255,255,255,.2)}
+.stats div:last-child{border:0}
+.stats b{display:block;font:800 30px Ruda}
+.stats span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+
+section{padding:70px 0}
+.title{text-align:center;font:800 30px Ruda;color:var(--navy);margin-bottom:8px}
+.sub{text-align:center;color:var(--muted);margin-bottom:40px}
+.title::after{content:"";display:block;width:56px;height:4px;background:var(--red);margin:12px auto 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px;border-top:4px solid var(--navy);transition:.2s}
+.card:hover{border-top-color:var(--red);transform:translateY(-4px);box-shadow:0 12px 26px rgba(20,33,61,.12)}
+.card h3{color:var(--navy);margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card a{display:inline-block;margin-top:12px;color:var(--red);font-weight:700;font-size:14px}
+
+.white{background:#fff}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.photos img{width:100%;height:230px;object-fit:cover;border-radius:8px}
+
+.band{background:var(--navy);color:#fff;text-align:center}
+.band h2{font:800 30px Ruda;margin-bottom:10px}
+.band p{color:#c9d1e3;max-width:700px;margin:0 auto 22px}
+
+footer{background:#0d1730;color:#aab3c8;font-size:14px;padding:40px 0 18px}
+footer .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+footer h4{color:#fff;margin-bottom:8px}
+footer .copy{border-top:1px solid #22304f;margin-top:26px;padding-top:14px;text-align:center;font-size:13px}
+@media(max-width:800px){.hero .container{grid-template-columns:1fr}.photos{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+
+<div class="palette"><div class="container">
+  <strong>Preview palette:</strong>
+  <span class="sw"><i style="background:#b3242b"></i>KCC Red #B3242B</span>
+  <span class="sw"><i style="background:#8e1b21"></i>Deep Red #8E1B21</span>
+  <span class="sw"><i style="background:#14213d"></i>Midnight Navy #14213D</span>
+  <span class="sw"><i style="background:#c8962e"></i>Gold #C8962E</span>
+  <span class="sw"><i style="background:#f5f6f8"></i>Background #F5F6F8</span>
+  <span class="sw"><i style="background:#1b2230"></i>Text #1B2230</span>
+</div></div>
+
+<div class="topbar"><div class="container">
+  <span>📞 <b>+91 92100 65555</b> &nbsp; ✉ admissions@kccitm.edu.in</span>
+  <span>Admissions open · Last date <b>15 October 2026</b></span>
+</div></div>
+
+<header class="navbar"><div class="container nav">
+  <a href="#"><img src="images/kcc-logo.png" alt="KCC Institutes, Greater Noida"></a>
+  <nav><a class="on" href="#">Home</a><a href="#">About</a><a href="#">Academics</a><a href="#">Programs</a><a href="#">Admissions</a><a href="#">Placements</a><a href="#">Campus</a><a href="#">Contact</a></nav>
+  <a class="apply" href="#">Apply Now</a>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="container">
+  <div>
+    <span class="tag">KCC Institute of Technology and Management</span>
+    <h1>Innovation is in our DNA. <span>Careers</span> follow.</h1>
+    <p>AKTU-affiliated, AICTE-approved engineering and management programmes on a 40-acre campus in Knowledge Park III, Greater Noida.</p>
+    <div class="btns"><a class="btn red" href="#">Explore Programs</a><a class="btn line" href="#">Download Prospectus</a></div>
+  </div>
+  <div class="hero-card">
+    <h3>Admissions 2026-27</h3>
+    <ul>
+      <li><span>B.Tech (9 branches)</span><b>₹60,000 / sem</b></li>
+      <li><span>MBA Plus</span><b>₹65,000 / sem</b></li>
+      <li><span>BBA · BCA · B.Com · BA(JMC)</span><b>₹95,000 / yr</b></li>
+      <li><span>BA LLB · BBA LLB</span><b>₹95,000 / yr</b></li>
+    </ul>
+  </div>
+</div></section>
+
+<div class="stats"><div class="container">
+  <div><b>250+</b><span>Companies visited</span></div>
+  <div><b>14.2 LPA</b><span>Highest national</span></div>
+  <div><b>31 LPA</b><span>Highest international</span></div>
+  <div><b>500+</b><span>Mentors</span></div>
+  <div><b>40 Acres</b><span>Campus</span></div>
+</div></div>
+
+<section><div class="container">
+  <h2 class="title">Why KCC?</h2>
+  <p class="sub">Trusted by students and parents across Delhi NCR</p>
+  <div class="cards">
+    <article class="card"><h3>Prime Location</h3><p>10 minutes' walk from Knowledge Park II Metro and 30 minutes from Jewar International Airport.</p><a href="#">Know more →</a></article>
+    <article class="card"><h3>Industry Partners</h3><p>Centres of excellence with Autodesk, Texas Instruments, RedHat, Cisco and Oracle.</p><a href="#">Know more →</a></article>
+    <article class="card"><h3>Placements</h3><p>250+ recruiters with packages up to 31 LPA internationally.</p><a href="#">Know more →</a></article>
+    <article class="card"><h3>Campus Life</h3><p>Nine societies, a sports complex and the annual fest Fuel.</p><a href="#">Know more →</a></article>
+  </div>
+</div></section>
+
+<section class="white"><div class="container">
+  <h2 class="title">Life@KCC</h2>
+  <p class="sub">A life worth living</p>
+  <div class="photos">
+    <img src="images/culture-1.webp" alt=""><img src="images/culture-4.webp" alt=""><img src="images/cr-2.webp" alt=""><img src="images/culture-7.webp" alt="">
+  </div>
+</div></section>
+
+<section class="band"><div class="container">
+  <h2>Admissions open for 2026-27</h2>
+  <p>B.Tech · M.Tech · MBA Plus · BBA · BCA · BA(JMC) · B.Com (H) · BA LLB · BBA LLB — apply by 15 October 2026.</p>
+  <a class="btn red" href="#">Enquire now</a>
+</div></section>
+
+<footer><div class="container">
+  <div class="grid">
+    <div><h4>KCC ITM</h4><p>2B-2C, Knowledge Park-III, Greater Noida, Uttar Pradesh 201310</p></div>
+    <div><h4>Admission Office</h4><p>M-78, Connaught Place, New Delhi 110001</p></div>
+    <div><h4>Contact</h4><p>+91 92100 65555<br>admissions@kccitm.edu.in</p></div>
+  </div>
+  <div class="copy">This is a design preview – not yet applied to the main site.</div>
+</div></footer>
+</body>
+</html>

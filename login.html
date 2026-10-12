@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in – KCC ITM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=5">
+<style>
+.lp-main{position:relative;overflow:hidden;padding:64px 0 80px;background:radial-gradient(1200px 600px at 15% 0%,#2a3f7a 0%,transparent 60%),radial-gradient(900px 500px at 90% 100%,#7a1b2a 0%,transparent 55%),linear-gradient(160deg,#0d1730,#14213d 60%,#1b2c55)}
+.lp-main .container{position:relative;z-index:2}
+.lp-orb{position:absolute;border-radius:50%;opacity:.55;animation:lpFloat 9s ease-in-out infinite;z-index:1}
+.lp-orb.o1{width:220px;height:220px;left:6%;top:12%;background:radial-gradient(circle at 30% 30%,#ff7b83,#b0202a 70%)}
+.lp-orb.o2{width:150px;height:150px;right:9%;top:30%;background:radial-gradient(circle at 30% 30%,#ffd88a,#c48a2c 70%);animation-delay:-3s}
+.lp-orb.o3{width:260px;height:260px;right:20%;bottom:-80px;background:radial-gradient(circle at 30% 30%,#7e9bff,#2a3f9a 70%);animation-delay:-6s}
+.lp-cube{position:absolute;width:70px;height:70px;left:18%;bottom:14%;transform-style:preserve-3d;animation:lpSpin 14s linear infinite;z-index:1}
+.lp-cube i{position:absolute;inset:0;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06)}
+.lp-cube i:nth-child(1){transform:translateZ(35px)}.lp-cube i:nth-child(2){transform:rotateY(180deg) translateZ(35px)}
+.lp-cube i:nth-child(3){transform:rotateY(90deg) translateZ(35px)}.lp-cube i:nth-child(4){transform:rotateY(-90deg) translateZ(35px)}
+.lp-cube i:nth-child(5){transform:rotateX(90deg) translateZ(35px)}.lp-cube i:nth-child(6){transform:rotateX(-90deg) translateZ(35px)}
+@keyframes lpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+@keyframes lpSpin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.lp-info{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0 auto 46px;max-width:1000px;perspective:1000px}
+.lp-info .tilt{padding:22px 24px;border-radius:16px;color:#e8ecf7;background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);box-shadow:0 18px 40px rgba(0,0,0,.35);transform-style:preserve-3d;transition:transform .15s ease-out}
+.lp-info .tilt .ic{display:block;font-size:26px;transform:translateZ(40px);margin-bottom:8px}
+.lp-info .tilt h3{margin:0 0 6px;color:#fff;font-size:15px;letter-spacing:.08em;text-transform:uppercase;transform:translateZ(30px)}
+.lp-info .tilt p{margin:0;font-size:14px;line-height:1.55;color:#c9d1e3;transform:translateZ(18px)}
+.lp-stage{perspective:1100px;max-width:440px;margin:0 auto;padding-top:34px}
+.lp-card{position:relative;padding:34px 32px 26px;border-radius:22px;background:linear-gradient(160deg,#fff,#f3f5fb);box-shadow:0 40px 80px rgba(0,0,0,.45);transform-style:preserve-3d;transition:transform .15s ease-out;max-width:none;display:block}
+.lp-card::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:22px 22px 0 0;background:linear-gradient(90deg,#b0202a,#e11c24,#d9a441)}
+.lp-avatar{display:grid;place-items:center;width:68px;height:68px;margin:-68px auto 12px;border-radius:50%;font-size:30px;background:linear-gradient(145deg,#e11c24,#8e141b);color:#fff;box-shadow:0 14px 26px rgba(174,22,28,.5);transform:translateZ(60px)}
+.lp-card h2{margin:0 0 4px;text-align:center;font:700 22px Ruda,sans-serif;color:#14213d;transform:translateZ(30px)}
+.lp-card .lp-sub{margin:0 0 22px;text-align:center;font-size:13px;color:#667;transform:translateZ(20px)}
+.lp-field{position:relative;display:block;margin-bottom:16px;transform:translateZ(25px)}
+.lp-field .lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#14213d;margin-bottom:6px}
+.lp-field .in{position:relative;display:block}
+.lp-field .in em{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;font-size:16px;opacity:.6}
+.lp-field input{width:100%;box-sizing:border-box;padding:13px 44px 13px 42px;border:1.5px solid #d5dae6;border-radius:12px;background:#fff;font:15px Ruda,sans-serif;color:#14213d;box-shadow:inset 0 2px 4px rgba(20,33,61,.06);transition:border-color .2s,box-shadow .2s,transform .2s}
+.lp-field input:focus{outline:0;border-color:#e11c24;box-shadow:0 0 0 4px rgba(225,28,36,.14),0 8px 18px rgba(20,33,61,.12);transform:translateY(-2px)}
+.lp-card button.lp-eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:auto;margin:0;border:0;background:none;box-shadow:none;cursor:pointer;font-size:17px;padding:6px;opacity:.6;border-radius:6px}
+.lp-card button.lp-eye:hover{opacity:1}
+.lp-card button.lp-go{width:100%;margin-top:6px;padding:14px;border:0;border-radius:12px;font:700 16px Ruda,sans-serif;letter-spacing:.04em;color:#fff;cursor:pointer;background:linear-gradient(180deg,#e8323a,#b0202a);box-shadow:0 8px 0 #7d1219,0 16px 24px rgba(174,22,28,.4);transform:translateZ(40px);transition:transform .12s,box-shadow .12s}
+.lp-card button.lp-go:hover{transform:translateZ(40px) translateY(-2px);box-shadow:0 10px 0 #7d1219,0 20px 28px rgba(174,22,28,.45)}
+.lp-card button.lp-go:active{transform:translateZ(40px) translateY(6px);box-shadow:0 2px 0 #7d1219,0 6px 10px rgba(174,22,28,.4)}
+.lp-card .lp-note{margin:24px 0 0;text-align:center;font-size:12.5px;color:#667;transform:translateZ(15px)}
+@media(max-width:800px){.lp-info{grid-template-columns:1fr}.lp-orb,.lp-cube{display:none}.lp-main{padding:44px 0 56px}}
+@media(prefers-reduced-motion:reduce){.lp-orb,.lp-cube{animation:none}}
+</style></head><body>
+<div id="site-header"></div>
+<div class="page-head"><h1>Log in</h1><p>Student / Faculty portal (demo)</p></div>
+<section class="lp-main"><span class="lp-orb o1"></span><span class="lp-orb o2"></span><span class="lp-orb o3"></span><div class="lp-cube"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="container">
+<div class="lp-info"><article class="tilt"><span class="ic">📚</span><h3>Courses</h3><p>Browse the course catalogue and track progress.</p></article><article class="tilt"><span class="ic">📢</span><h3>Notices</h3><p>Exam, feedback and admission announcements in one place.</p></article><article class="tilt"><span class="ic">📝</span><h3>Feedback</h3><p>Complete the anonymous course teacher feedback before the mid-term.</p></article></div>
+<div class="lp-stage"><form id="login-form" class="form lp-card"><div class="lp-avatar">🎓</div><h2>Welcome back</h2><p class="lp-sub">Sign in to your student / faculty portal</p>
+<label class="lp-field"><span class="lbl">User ID / Email</span><span class="in"><em>👤</em><input name="id" required autocomplete="username" placeholder="Enter your ID or email"></span></label>
+<label class="lp-field"><span class="lbl">Password</span><span class="in"><em>🔒</em><input type="password" name="pw" required autocomplete="current-password" placeholder="Enter your password"><button type="button" class="lp-eye" aria-label="Show password">👁</button></span></label>
+<button class="lp-go">Log in</button>
+<p class="lp-note">Demo login: any ID and password works. Nothing is sent anywhere.</p></form></div>
+</div></section>
+<div id="site-footer"></div>
+<script src="layout.js?v=3"></script><script src="script.js"></script>
+<script>
+(function(){
+  var eye=document.querySelector('.lp-eye'),pw=document.querySelector('input[name=pw]');
+  eye.onclick=function(){pw.type=pw.type==='password'?'text':'password'};
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)return;
+  function tilt(el,hover,max){
+    hover.addEventListener('mousemove',function(e){var r=hover.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='rotateY('+(x*max)+'deg) rotateX('+(-y*max)+'deg)'});
+    hover.addEventListener('mouseleave',function(){el.style.transform=''});
+  }
+  document.querySelectorAll('.lp-info .tilt').forEach(function(c){tilt(c,c,16)});
+  var card=document.getElementById('login-form');tilt(card,card.parentNode,14);
+})();
+</script></body></html>
